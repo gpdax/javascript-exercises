@@ -1,7 +1,7 @@
 const sumAll = function() {
     let args = Array.from(arguments);
     let sum = 0;
-    if (args.some(arg => typeof arg !== 'number' || arg < 0)) {
+    if (args.some(arg => typeof arg !== 'number' || !Number.isInteger(arg) || arg < 0)) {
         return 'ERROR';
     }
     let min = Math.min(...args);
